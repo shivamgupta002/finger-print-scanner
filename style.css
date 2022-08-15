@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+    min-height:95vh ;  
+}   
+.centre{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    color: aqua;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+}
+.centre .img{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-image:url(./img/1.png);
+    background-size: 300px;
+}
+.centre .img::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/2.png);
+    background-size: 300px;
+    animation: animate  4s ease-in-out infinite;
+}
+@keyframes animated {
+    0%,100%{
+        height: 0%;
+    }
+    50%{
+        height: 100%;
+    }
+}
+.centre .img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4%;
+   background: #3fefef;
+   border-radius: 5px;
+   filter: drop-shadow(0 0 10px #3fefef)drop-shadow(0 0 10px #3fefef);
+   animation: animate_line  4s ease-in-out infinite;
+}
+@keyframes animate_line {
+    0%,100%{
+        top: 0%;
+    }
+    50%{
+        top: 100%;
+    }
+}
+.centre h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin: 2rem;
+    color: #3fefef;
+    filter: drop-shadow(0 0 20px #3fefef)drop-shadow(0 0 20px #3fefef);
+    animation: animate_text  1.5s ease-in-out infinite;
+}
+@keyframes animate_text {
+    0%,100%{
+       opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
